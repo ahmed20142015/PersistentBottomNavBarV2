@@ -97,8 +97,8 @@ class BottomNavStyle15 extends StatelessWidget {
                   offset: Offset(0, -23),
                   child: Center(
                     child: Container(
-                      width: 150.0,
-                      height: height,
+                      width: 80,
+                      height: 80,
                       margin: EdgeInsets.only(top: 2.0),
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
@@ -191,7 +191,7 @@ class BottomNavStyle15 extends StatelessWidget {
                   ImageFilter.blur(sigmaX: 0.5, sigmaY: 0.5),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
-                crossAxisAlignment: CrossAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: this.navBarEssentials!.items!.map((item) {
                   int index = this.navBarEssentials!.items!.indexOf(item);
                   return Flexible(

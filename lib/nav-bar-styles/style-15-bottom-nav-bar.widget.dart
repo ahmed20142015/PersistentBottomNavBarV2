@@ -57,7 +57,7 @@ class BottomNavStyle15 extends StatelessWidget {
                   type: MaterialType.transparency,
                   child: FittedBox(
                       child: Text(
-                        item.title!,
+                        item.title!,textAlign: TextAlign.center,
                         style: item.textStyle != null
                             ? (item.textStyle!.apply(
                             color: isSelected

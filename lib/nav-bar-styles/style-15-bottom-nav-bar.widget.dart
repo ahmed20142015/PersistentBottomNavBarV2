@@ -34,23 +34,21 @@ class BottomNavStyle15 extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
-                Container(
-                  height: 22,
-                  child:  IconTheme(
-                    data: IconThemeData(
-                        size: item.iconSize,
-                        color: isSelected
-                            ? (item.activeColorSecondary == null
-                            ? item.activeColorPrimary
-                            : item.activeColorSecondary)
-                            : item.inactiveColorPrimary == null
-                            ? item.activeColorPrimary
-                            : item.inactiveColorPrimary),
-                    child: isSelected
-                        ? item.icon
-                        : item.inactiveIcon ?? item.icon,
-                  ),
+                IconTheme(
+                  data: IconThemeData(
+                      size: item.iconSize,
+                      color: isSelected
+                          ? (item.activeColorSecondary == null
+                          ? item.activeColorPrimary
+                          : item.activeColorSecondary)
+                          : item.inactiveColorPrimary == null
+                          ? item.activeColorPrimary
+                          : item.inactiveColorPrimary),
+                  child: isSelected
+                      ? item.icon
+                      : item.inactiveIcon ?? item.icon,
                 ),
+                SizedBox(height: 5,),
                 item.title == null
                     ? SizedBox.shrink()
                     : Material(

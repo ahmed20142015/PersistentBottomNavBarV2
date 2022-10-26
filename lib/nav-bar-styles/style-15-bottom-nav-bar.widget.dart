@@ -35,7 +35,7 @@ class BottomNavStyle15 extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
                 Container(
-                  height: 25,
+                  height: 22,
                   child:  IconTheme(
                     data: IconThemeData(
                         size: item.iconSize,
@@ -93,8 +93,8 @@ class BottomNavStyle15 extends StatelessWidget {
           offset: Offset(0, -23),
           child: Center(
             child: Container(
-              width: 60,
-              height: 60,
+              width: 80,
+              height: 80,
               margin: EdgeInsets.only(bottom: 30),
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
@@ -105,7 +105,7 @@ class BottomNavStyle15 extends StatelessWidget {
               ),
               child: Container(
                 alignment: Alignment.center,
-                height: 60,
+                height: 80,
                 child: ListView(
                   shrinkWrap: true,
                   physics: NeverScrollableScrollPhysics(),

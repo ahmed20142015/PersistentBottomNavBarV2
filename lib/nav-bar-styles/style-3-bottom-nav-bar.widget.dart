@@ -108,41 +108,41 @@ class BottomNavStyle3 extends StatelessWidget {
               this.navBarEssentials!.navBarHeight! * 0.1),
       child: Column(
         children: <Widget>[
-          Row(
-            children: <Widget>[
-              AnimatedContainer(
-                duration:
-                    this.navBarEssentials!.itemAnimationProperties?.duration ??
-                        Duration(milliseconds: 300),
-                curve: this.navBarEssentials!.itemAnimationProperties?.curve ??
-                    Curves.ease,
-                color: Colors.transparent,
-                width: this.navBarEssentials!.selectedIndex == 0
-                    ? MediaQuery.of(context).size.width * 0.0
-                    : itemWidth * this.navBarEssentials!.selectedIndex!,
-                height: 4.0,
-              ),
-              Flexible(
-                child: AnimatedContainer(
-                  duration: this
-                          .navBarEssentials!
-                          .itemAnimationProperties
-                          ?.duration ??
-                      Duration(milliseconds: 300),
-                  curve:
-                      this.navBarEssentials!.itemAnimationProperties?.curve ??
-                          Curves.ease,
-                  width: itemWidth,
-                  height: 4.0,
-                  alignment: Alignment.center,
-                  decoration: BoxDecoration(
-                    color: selectedItemActiveColor,
-                    borderRadius: BorderRadius.circular(100.0),
-                  ),
-                ),
-              )
-            ],
-          ),
+          // Row(
+          //   children: <Widget>[
+          //     AnimatedContainer(
+          //       duration:
+          //           this.navBarEssentials!.itemAnimationProperties?.duration ??
+          //               Duration(milliseconds: 300),
+          //       curve: this.navBarEssentials!.itemAnimationProperties?.curve ??
+          //           Curves.ease,
+          //       color: Colors.transparent,
+          //       width: this.navBarEssentials!.selectedIndex == 0
+          //           ? MediaQuery.of(context).size.width * 0.0
+          //           : itemWidth * this.navBarEssentials!.selectedIndex!,
+          //       height: 4.0,
+          //     ),
+          //     Flexible(
+          //       child: AnimatedContainer(
+          //         duration: this
+          //                 .navBarEssentials!
+          //                 .itemAnimationProperties
+          //                 ?.duration ??
+          //             Duration(milliseconds: 300),
+          //         curve:
+          //             this.navBarEssentials!.itemAnimationProperties?.curve ??
+          //                 Curves.ease,
+          //         width: itemWidth,
+          //         height: 4.0,
+          //         alignment: Alignment.center,
+          //         decoration: BoxDecoration(
+          //           color: selectedItemActiveColor,
+          //           borderRadius: BorderRadius.circular(100.0),
+          //         ),
+          //       ),
+          //     )
+          //   ],
+          // ),
           Expanded(
             child: Padding(
               padding: const EdgeInsets.only(top: 5.0),

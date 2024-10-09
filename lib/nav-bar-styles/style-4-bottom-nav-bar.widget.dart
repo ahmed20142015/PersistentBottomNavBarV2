@@ -13,69 +13,69 @@ class BottomNavStyle4 extends StatelessWidget {
     return this.navBarEssentials!.navBarHeight == 0
         ? SizedBox.shrink()
         : AnimatedContainer(
-            width: 50.0,
-            height: height,
-            duration:
-                this.navBarEssentials!.itemAnimationProperties!.duration ??
-                    Duration(milliseconds: 1000),
-            curve: this.navBarEssentials!.itemAnimationProperties!.curve ??
-                Curves.ease,
-            child: AnimatedContainer(
-              alignment: Alignment.center,
-              duration:
-                  this.navBarEssentials!.itemAnimationProperties!.duration ??
-                      Duration(milliseconds: 1000),
-              curve: this.navBarEssentials!.itemAnimationProperties!.curve ??
-                  Curves.ease,
-              height: height! / 1.6,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: <Widget>[
-                  Expanded(
-                    child: IconTheme(
-                      data: IconThemeData(
-                          size: item.iconSize,
-                          color: isSelected
-                              ? (item.activeColorSecondary == null
-                                  ? item.activeColorPrimary
-                                  : item.activeColorSecondary)
-                              : item.inactiveColorPrimary == null
-                                  ? item.activeColorPrimary
-                                  : item.inactiveColorPrimary),
-                      child: isSelected
-                          ? item.icon
-                          : item.inactiveIcon ?? item.icon,
-                    ),
-                  ),
-                  item.title == null
-                      ? SizedBox.shrink()
-                      : Material(
-                          type: MaterialType.transparency,
-                          child: DefaultTextStyle.merge(
-                            style: item.textStyle != null
-                                ? (item.textStyle!.apply(
-                                    color: isSelected
-                                        ? (item.activeColorSecondary == null
-                                            ? item.activeColorPrimary
-                                            : item.activeColorSecondary)
-                                        : item.inactiveColorPrimary))
-                                : TextStyle(
-                                    color: isSelected
-                                        ? (item.activeColorSecondary == null
-                                            ? item.activeColorPrimary
-                                            : item.activeColorSecondary)
-                                        : item.inactiveColorPrimary,
-                                    fontWeight: FontWeight.w400,
-                                    fontSize: 12.0),
-                            child: FittedBox(
-                                child: Text(isSelected ? item.title! : " ")),
-                          ),
-                        ),
-                ],
+      width: 100.0,
+      height: height,
+      duration:
+      this.navBarEssentials!.itemAnimationProperties!.duration ??
+          Duration(milliseconds: 1000),
+      curve: this.navBarEssentials!.itemAnimationProperties!.curve ??
+          Curves.ease,
+      child: AnimatedContainer(
+        alignment: Alignment.center,
+        duration:
+        this.navBarEssentials!.itemAnimationProperties!.duration ??
+            Duration(milliseconds: 1000),
+        curve: this.navBarEssentials!.itemAnimationProperties!.curve ??
+            Curves.ease,
+        height: height! / 1.6,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+            Expanded(
+              child: IconTheme(
+                data: IconThemeData(
+                    size: item.iconSize,
+                    color: isSelected
+                        ? (item.activeColorSecondary == null
+                        ? item.activeColorPrimary
+                        : item.activeColorSecondary)
+                        : item.inactiveColorPrimary == null
+                        ? item.activeColorPrimary
+                        : item.inactiveColorPrimary),
+                child: isSelected
+                    ? item.icon
+                    : item.inactiveIcon ?? item.icon,
               ),
             ),
-          );
+            item.title == null
+                ? SizedBox.shrink()
+                : Material(
+              type: MaterialType.transparency,
+              child: DefaultTextStyle.merge(
+                style: item.textStyle != null
+                    ? (item.textStyle!.apply(
+                    color: isSelected
+                        ? (item.activeColorSecondary == null
+                        ? item.activeColorPrimary
+                        : item.activeColorSecondary)
+                        : item.inactiveColorPrimary))
+                    : TextStyle(
+                    color: isSelected
+                        ? (item.activeColorSecondary == null
+                        ? item.activeColorPrimary
+                        : item.activeColorSecondary)
+                        : item.inactiveColorPrimary,
+                    fontWeight: FontWeight.w400,
+                    fontSize: 12.0),
+                child: FittedBox(
+                    child: Text(isSelected ? item.title! : " ")),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 
   @override
@@ -85,10 +85,10 @@ class BottomNavStyle4 extends StatelessWidget {
         .items![this.navBarEssentials!.selectedIndex!]
         .activeColorPrimary;
     double itemWidth = ((MediaQuery.of(context).size.width -
-            ((this.navBarEssentials!.padding?.left ??
-                    MediaQuery.of(context).size.width * 0.05) +
-                (this.navBarEssentials!.padding?.right ??
-                    MediaQuery.of(context).size.width * 0.05))) /
+        ((this.navBarEssentials!.padding?.left ??
+            MediaQuery.of(context).size.width * 0.05) +
+            (this.navBarEssentials!.padding?.right ??
+                MediaQuery.of(context).size.width * 0.05))) /
         this.navBarEssentials!.items!.length);
     return Container(
       width: double.infinity,
@@ -102,13 +102,14 @@ class BottomNavStyle4 extends StatelessWidget {
           bottom: this.navBarEssentials!.padding?.bottom ??
               this.navBarEssentials!.navBarHeight! * 0.1),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           Row(
             children: <Widget>[
               AnimatedContainer(
                 duration:
-                    this.navBarEssentials!.itemAnimationProperties!.duration ??
-                        Duration(milliseconds: 300),
+                this.navBarEssentials!.itemAnimationProperties!.duration ??
+                    Duration(milliseconds: 300),
                 curve: this.navBarEssentials!.itemAnimationProperties!.curve ??
                     Curves.ease,
                 color: Colors.transparent,
@@ -120,22 +121,25 @@ class BottomNavStyle4 extends StatelessWidget {
               Flexible(
                 child: AnimatedContainer(
                   duration: this
-                          .navBarEssentials!
-                          .itemAnimationProperties!
-                          .duration ??
+                      .navBarEssentials!
+                      .itemAnimationProperties!
+                      .duration ??
                       Duration(milliseconds: 300),
                   curve:
-                      this.navBarEssentials!.itemAnimationProperties!.curve ??
-                          Curves.ease,
+                  this.navBarEssentials!.itemAnimationProperties!.curve ??
+                      Curves.ease,
                   width: itemWidth,
                   height: 4.0,
                   alignment: Alignment.center,
-                  child: Container(
-                    height: 4.0,
-                    width: itemWidth,
-                    decoration: BoxDecoration(
-                      color: selectedItemActiveColor,
-                      borderRadius: BorderRadius.circular(100.0),
+                  child: Center(
+                    child: Container(
+                      margin: EdgeInsetsDirectional.only(start: itemWidth/20),
+                      height: 4.0,
+                      width: itemWidth/3,
+                      decoration: BoxDecoration(
+                        color: selectedItemActiveColor,
+                        borderRadius: BorderRadius.circular(100.0),
+                      ),
                     ),
                   ),
                 ),

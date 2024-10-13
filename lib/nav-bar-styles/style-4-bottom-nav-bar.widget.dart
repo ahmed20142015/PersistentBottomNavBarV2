@@ -90,65 +90,71 @@ class BottomNavStyle4 extends StatelessWidget {
             (this.navBarEssentials!.padding?.right ??
                 MediaQuery.of(context).size.width * 0.05))) /
         this.navBarEssentials!.items!.length);
-    return Container(
-      width: double.infinity,
-      height: this.navBarEssentials!.navBarHeight,
-      padding: EdgeInsets.only(
-          top: this.navBarEssentials!.padding?.top ?? 0.0,
-          left: this.navBarEssentials!.padding?.left ??
-              MediaQuery.of(context).size.width * 0.05,
-          right: this.navBarEssentials!.padding?.right ??
-              MediaQuery.of(context).size.width * 0.05,
-          bottom: this.navBarEssentials!.padding?.bottom ??
-              this.navBarEssentials!.navBarHeight! * 0.1),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: <Widget>[
-          Row(
-            children: <Widget>[
-              AnimatedContainer(
-                duration:
-                this.navBarEssentials!.itemAnimationProperties!.duration ??
-                    Duration(milliseconds: 300),
-                curve: this.navBarEssentials!.itemAnimationProperties!.curve ??
-                    Curves.ease,
-                color: Colors.transparent,
-                width: (this.navBarEssentials!.selectedIndex == 0
-                    ? MediaQuery.of(context).size.width * 0.0
-                    : itemWidth * this.navBarEssentials!.selectedIndex!),
-                height: 4.0,
-              ),
-              Flexible(
-                child: AnimatedContainer(
-                  duration: this
-                      .navBarEssentials!
-                      .itemAnimationProperties!
-                      .duration ??
+    return Card(
+      elevation: 10,
+      shadowColor: Colors.black,
+      margin: EdgeInsets.only(top: 1),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.only(topLeft: Radius.circular(20.0),topRight: Radius.circular(20.0),),
+      ),
+      color: Colors.white,
+      child: Container(
+        width: double.infinity,
+        height: this.navBarEssentials!.navBarHeight,
+        padding: EdgeInsets.only(
+            top: this.navBarEssentials!.padding?.top ?? 0.0,
+            left: this.navBarEssentials!.padding?.left ??
+                MediaQuery.of(context).size.width * 0.05,
+            right: this.navBarEssentials!.padding?.right ??
+                MediaQuery.of(context).size.width * 0.05,
+            bottom: this.navBarEssentials!.padding?.bottom ??
+                this.navBarEssentials!.navBarHeight! * 0.1),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+            Row(
+              children: <Widget>[
+                AnimatedContainer(
+                  duration:
+                  this.navBarEssentials!.itemAnimationProperties!.duration ??
                       Duration(milliseconds: 300),
-                  curve:
-                  this.navBarEssentials!.itemAnimationProperties!.curve ??
+                  curve: this.navBarEssentials!.itemAnimationProperties!.curve ??
                       Curves.ease,
-                  width: itemWidth,
+                  color: Colors.transparent,
+                  width: (this.navBarEssentials!.selectedIndex == 0
+                      ? MediaQuery.of(context).size.width * 0.0
+                      : itemWidth * this.navBarEssentials!.selectedIndex!),
                   height: 4.0,
-                  alignment: Alignment.center,
-                  child: Center(
-                    child: Container(
-                      margin: EdgeInsetsDirectional.only(start: itemWidth/20),
-                      height: 4.0,
-                      width: itemWidth/3,
-                      decoration: BoxDecoration(
-                        color: selectedItemActiveColor,
-                        borderRadius: BorderRadius.circular(100.0),
+                ),
+                Flexible(
+                  child: AnimatedContainer(
+                    duration: this
+                        .navBarEssentials!
+                        .itemAnimationProperties!
+                        .duration ??
+                        Duration(milliseconds: 300),
+                    curve:
+                    this.navBarEssentials!.itemAnimationProperties!.curve ??
+                        Curves.ease,
+                    width: itemWidth,
+                    height: 8.0,
+                    alignment: Alignment.center,
+                    child: Center(
+                      child: Container(
+                        margin: EdgeInsetsDirectional.only(start: itemWidth/20),
+                        height: 8.0,
+                        width: itemWidth/3,
+                        decoration: BoxDecoration(
+                          color: selectedItemActiveColor,
+                          borderRadius: BorderRadius.only(bottomLeft: Radius.circular(100.0),bottomRight: Radius.circular(100.0)),
+                        ),
                       ),
                     ),
                   ),
-                ),
-              )
-            ],
-          ),
-          Expanded(
-            child: Padding(
-              padding: const EdgeInsets.only(top: 5.0),
+                )
+              ],
+            ),
+            Expanded(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -178,8 +184,8 @@ class BottomNavStyle4 extends StatelessWidget {
                 }).toList(),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
